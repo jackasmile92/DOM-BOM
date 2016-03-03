@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="style/my_css.css">
+	<script src="script/select.js"></script>
+	<script src="script/policy.js"></script>
+	<script src="script/save.js"></script>
+	<script src="script/deleteAll.js"></script>
+	<script src="script/tableText.js"></script>
+	<script>
+	
+	</script>
+	<title>DOM&BOM</title>
+</head>
+<body>
+	<section>
+		<h2>Введите данные о полисе:</h2>
+		<form method='post'>
+		<ol>
+ 			<li>Выберите вид страхования:<br/>
+ 				<select id = "insurance type" onchange = "Validation()">
+  					<option selection = "selected">КАСКО</option>
+  					<option>ОСАГО</option>
+  					<option>ДАГО</option>
+				</select>
+			</li>
+			<li>Введите номер полиса: <br/>
+
+
+			<input id = "number" pattern = "^[0][0-4][0-9][aA][tT][-][0-2][0-9][/][0-9]{5}$" required value=""></li>
+			<li>Введите ФИО страхователя: <br/><input id = "name" required value=""></li>
+			<li>Введите дату продажи: <br/><input type="date" id = "date" ></li>
+			<li>Страховая премия: <br/><input pattern = "^[ 0-9]+$" id = "premium"></li>
+			<li>Скидка: <br/><input pattern = "^[ 0-9]+$" id = "discount"></li>
+		</ol>
+		<input type="submit" id= "button" onclick="Save()">
+		</form>
+	</section>
+    <hr>
+	<form>  
+	 <div id = "table"></div>
+	 <hr>
+	 <input type="submit" id= "button" value= "Удалить все" onclick="DeleteAll()">
+	 <input type="submit" id= "button" value= "Удалить" onclick="DeleteOne()">
+    </form>
+	 <script>
+	  TableText();
+	</script>
+</body>
+</html>
