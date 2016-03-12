@@ -10,15 +10,20 @@ function Save(){
     if (type == 2) {
        	type = "ДАГО"
     };
+    var info = document.getElementById("number");
 	var number = document.getElementById("number").value;
 	var owner = document.getElementById("name").value;
 	var date = document.getElementById("date").value;
 	var premium = document.getElementById("premium").value;
 	var discount = document.getElementById("discount").value;
+    var policy = new Policy(type, number, owner, date, premium, discount);
+    
+    var pattern = info.getAttribute("pattern");
+    pattern = new RegExp(pattern);
 
 
     
-    if (type && number && owner && date) {
+    if (pattern.test(number) && (owner != "") && date){
 		var policy = new Policy(type, number, owner, date, premium, discount);
 		var base = [];
 		if(JSON.parse(localStorage.getItem("test3")) ){
@@ -31,4 +36,9 @@ function Save(){
     }
 
 	
+}
+
+function testing(policy){
+
+
 }
